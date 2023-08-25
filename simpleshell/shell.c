@@ -5,7 +5,6 @@
  * @argc: Argument counter
  * @argv: Argument Vector
  * Return: Errno
- *
  */
 
 int main(int argc, char **argv)
@@ -34,8 +33,8 @@ int main(int argc, char **argv)
 			free(buffer);
 			exit(errno);
 		}
-		fix_comments(buffer);
-		args = tokenizah(buffer); /*dynamically allocated*/
+		fix(buffer);
+		args = tokens(buffer); /*dynamically allocated*/
 		if (args[0] == NULL)
 		{
 			free(args); /*When ONLY SPACES OR NEW LINES ARE ENTERED We return and print the prompt*/
@@ -46,13 +45,13 @@ int main(int argc, char **argv)
 		if (access(args[0], X_OK) == -1)
 		{
 			/*Confirm if it's a builtin: If it returns 0 it means cmd is not a builtin else it returns 1 to builtin_status*/
-			builtin_status = handle_builtins(args, argv[0], buffer);
+			builtin_status = builtin(args, argv[0], buffer);
 
 			if (builtin_status == 1)
 				continue;
 
 			/*Get full path and assign to fullpath variable*/ /* Implement builtin within this block*/
-			fullcmd = get_full_path(_getpath(), args[0]);
+			fullcmd = full_path(path(), args[0]);
 
 			if (fullcmd == NULL)
 			{
@@ -63,12 +62,12 @@ int main(int argc, char **argv)
 				continue;
 			}
 			/* This is only called when the concatenated full path is valid i.e full path not NULL*/
-			extra_execn(args, argv, fullcmd);
+			ex_exec(args, argv, fullcmd);
 			continue;
 			/*Continuing to the top of the loop so the execute underneath is not called*/
 		}
 		/* Handles when full path is entered by user correctly*/
-		execn(args, argv);
+		exec(args, argv);
 	}
 
 	return (errno);
