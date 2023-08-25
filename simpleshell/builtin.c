@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * builtin - function handle built in command
+ * @args: user arguments
+ * @progname: programe nane
+ * @buffer: string to check
+ * Return: To return built in executable
+ */
+
 int builtin(char **args, char *progname, char *buffer)
 {
 	int executed = 0, idx = 0;
@@ -21,7 +29,7 @@ int builtin(char **args, char *progname, char *buffer)
 
 			idx++;
 		}
-		free(args); /*There is no need to free the buffer at this point since getline -1 frees it already*/
+		free(args);
 		executed = 1;
 	}
 
