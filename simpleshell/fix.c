@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * fix_comments - Checks if the string is a comment
+ * fix - Checks if the string is a comment
  * @buffer: The string to check and fix a null byte at point of #
  * Return: Void
  */
 
-void fix_comments(char *buffer)
+void fix(char *buffer)
 {
 	int i = 0;
 

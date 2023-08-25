@@ -1,14 +1,13 @@
 #include "shell.h"
 
 /**
- * execn - Executes the command
+ * exec - Executes the command
  * @args: An array of user arguments
  * @argv: Array of command line arguments
- * Author: Oluwatobi Adesanya
  * Return: Void
  */
 
-int execn(char **args, char **argv)
+int exec(char **args, char **argv)
 {
 	pid_t pid_num;
 	int status;

@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int handle_builtins(char **args, char *progname, char *buffer)
+int builtin(char **args, char *progname, char *buffer)
 {
 	int executed = 0, idx = 0;
 

@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * _getpath - Retrieves and duplicates the path
- * Author: Chinenye Ikpa
+ * path - Retrieves and duplicates the path
  * Return: A strings of the PATH Variable
  */
 
-char *_getpath(void)
+char *path(void)
 {
 	int i;
 	char *dup = NULL;

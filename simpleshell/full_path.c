@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * get_full_path - returns a valid path else NULL
+ * full_path - returns a valid path else NULL
  * @paths: A string of multiple directories in the path
  * @cmd: Command string (Not an array)
  * Return: A Pointer to full string or NULL
  */
 
-char *get_full_path(char *paths, char *cmd)
+char *full_path(char *paths, char *cmd)
 {
 	char **path_tokens = NULL, *token = NULL, *temp = NULL, *fullpath = NULL;
 	int idx = 0;

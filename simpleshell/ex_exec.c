@@ -1,15 +1,14 @@
 #include "shell.h"
 
 /**
- * extra_execn - Executes the command
+ * ex_exec - Executes the command
  * @args: An array of user arguments
  * @argv: Array of command line arguments
  * @fullcmd: Full command
- * Author: Oluwatobi Adesanya
  * Return: Void
  */
 
-int extra_execn(char **args, char **argv, char *fullcmd)
+int ex_exec(char **args, char **argv, char *fullcmd)
 {
 	pid_t pid_num;
 	int status;

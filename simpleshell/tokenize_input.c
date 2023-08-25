@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * tokenizah - Tokenizes a string and returns
+ * tokens - Tokenizes a string and returns
  * a dynamically allocated array of strings
  * @string: Buffer entered by user
  * Return: Double pointer of the string
  */
 
-char **tokenizah(char *string)
+char **tokens(char *string)
 {
 	char **tokens = NULL;
 	int x = 0;

@@ -1,14 +1,13 @@
 #include "shell.h"
 
 /**
- * free_array - Frees an array of dynamically allocated string
+ * free_argv - Frees an array of dynamically allocated string
  * @argc: Number to be freed
  * @argv: Array of dynamically allocated strings
- * Author: Wassim Haimoudi
  * Return: Void
  */
 
-void free_array(int argc, char *argv[])
+void free_argv(int argc, char *argv[])
 {
 	int i = 0;
 
