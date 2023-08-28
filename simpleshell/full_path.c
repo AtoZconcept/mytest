@@ -15,17 +15,14 @@ char *full_path(char *paths, char *cmd)
 
 	if (paths == NULL)
 		return (NULL);
-
 	temp = strtok(paths, "=");
 	temp = strtok(NULL, "=");
-
 	path_tokens = malloc(sizeof(char *) * 30);
 	if (path_tokens == NULL)
 	{
 		free(paths);
 		return (NULL);
 	}
-
 	token = strtok(temp, ":");
 	while (token != NULL)
 	{
@@ -35,7 +32,6 @@ char *full_path(char *paths, char *cmd)
 	}
 	path_tokens[idx] = NULL; /*ARRAY OF ALL DIRECTORIES*/
 	idx = 0;
-
 	while (path_tokens[idx] != NULL)
 	{
 		len = strlen(path_tokens[idx]) + strlen(cmd) + 2;
@@ -43,7 +39,6 @@ char *full_path(char *paths, char *cmd)
 		strcpy(fullpath, path_tokens[idx]);
 		strcat(fullpath, "/");
 		strcat(fullpath, cmd);
-
 		if (access(fullpath, X_OK) == 0)
 		{
 			free(path_tokens);
@@ -54,7 +49,6 @@ char *full_path(char *paths, char *cmd)
 		fullpath = NULL;
 		idx++;
 	}
-
 	free(path_tokens);
 	free(paths);
 	return (NULL);
