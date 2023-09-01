@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <unistd.h>
 
+int _putchar(char c);
 /**
  * main - check the code
  *
  * Return: Always 0.
  */
+
 int _putchar(char c)
 {
     return (write(1, &c, 1));
@@ -12,12 +15,12 @@ int _putchar(char c)
 
 void print_numbers(void)
 {
-    char a;
-    for (a = 48; a <= 57; a++);
-    {
-    _putchar ('a');
-    }
-    _putchar ('\n');
+   int c;
+
+    for (c = 0; c <= 9; c++);
+        //_putchar(c + '0');
+        printf("%d", c);
+//    _putchar ('\n');
 }
 
 int main(void)
