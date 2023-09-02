@@ -13,21 +13,25 @@ int _putchar(char c)
 
 void print_diagonal(int n)
 {
-    int a, b = 0;
+    int a, b;
     if (n > 0)
     {
-        while (b < n)
-        {
-                _putchar(' ');
         for (a = 0; a < n; a++)
         {
+        if (a > 0)
+        {
+        b = 1;
+        while (b <= a)
+        {
+                _putchar(' ');
+                b++;
+        }
+        }
         _putchar('\\');
         _putchar ('\n');
         }
-        //b++;
-                }b++;
     }
-    else
+   else
     {
         _putchar('\n');
     }
