@@ -13,20 +13,29 @@ int _putchar(char c)
 
 void print_triangle(int size)
 {
-    int a, b;
-    if (size > 0)
+    if (size <= 0)
     {
-        if(size > 0)
+        _putchar('\n');
+    }
+    else
+    {
+        int a, b;
+
+        for (a = 1; a <= size; a++)
         {
-            for (a = 1; a < size; a++)
-            _putchar(' ');
-        }
-        for (b = 0; b < size; b++)
-        {
-            _putchar('#');
+            for (b = a; b < size; b++)
+            {
+                _putchar(' ');
+            }
+            for (b = 1; b <= a; b++)
+            {
+                _putchar('#');
+            }
+            //c++;
             _putchar('\n');
         }
     }
+    //_putchar('\n');
 }
 
 int main(void)
