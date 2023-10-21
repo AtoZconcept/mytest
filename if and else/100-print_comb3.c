@@ -8,14 +8,14 @@
 int main()
 {
     int a,b;
-    for (a = 48; a <= 56; a++)
+    for (a = 48; a <= 57; a++)
     {
         for (b = 49; b <= 57; b++)
         if(a < b)
         {
             putchar(a);
             putchar(b);
-            if (a < 56 || b < 57)
+            if (a < 56)
             {
                 putchar(',');
                 putchar(' ');
@@ -23,5 +23,6 @@ int main()
         }
     }
     putchar('\n');
+    
     return 0;
 }

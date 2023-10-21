@@ -23,6 +23,7 @@ int main(int c, char **argv)
                 if (nchars_read == -1)
                 {
                         printf("Exiting Myshell.......\n");
+                        free(lineptr);
                         return (-1);
                 }
                 lineptr_copy = malloc(sizeof(char) * nchars_read);

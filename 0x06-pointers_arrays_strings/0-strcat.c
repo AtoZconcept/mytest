@@ -14,15 +14,22 @@ int _putchar(char c)
 
 char *_strcat(char *dest, char *src)
 {
-    char *new = dest;
-    while(*src != '\0')
+    int i, len = 0, count = 0;
+    while (dest[len] != '\0')
     {
-        *dest = *src;
-        dest++;
-        src++;
+        len++;
     }
-    dest = '\0';
-    return new;
+    
+    while(src[count] != '\0')
+    {
+        //dest[len + count] = src[count];
+        count++;
+    }
+    for(i = 0; i <= count; i++)
+    {
+        dest[len + i] = src[i];
+    }
+    return dest;
 }
 
 int main(void)
