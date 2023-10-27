@@ -14,45 +14,22 @@ int _putchar(char c)
 
 int _atoi(char *s)
 {
-    int sign = 1; // Initialize the sign to positive
-    int result = 0;
-
-    // Skip leading whitespace
-    while (*s == ' ' || (*s >= 9 && *s <= 13))
+    int i, nb = 0, convert = 0, len = 0;
+    while(s[len] != '\0')
     {
-        s++;
+        len++;
     }
 
-    // Check for sign character
-    if (*s == '-' || *s == '+') 
+    for (i = 0; i < len; i++)
     {
-        if (*s == '-')
+        if (s[i] >= '0' && s[i] <= '9')
         {
-            sign = -1; // Set the sign to negative if a minus sign is found
+            convert = s[i] - '0';
+            nb = nb * 10 + convert;
         }
-        s++;
     }
-    while (*s >= '0' && *s <= '9')
-    {
-        // Check for potential overflow before adding the digit
-        if (result > (2147483647 - (*s - '0')) / 10)
-        {
-            // Overflow detected
-            if (sign == 1)
-            {
-                return 2147483647; // Return INT_MAX for positive overflow
-            }
-            else
-            {
-                return -2147483648; // Return INT_MIN for negative overflow
-            }
-        }
+    return nb;
 
-        result = result * 10 + (*s - '0');
-        s++;
-    }
-
-    return sign * result;
 }
 int main(void)
 {
