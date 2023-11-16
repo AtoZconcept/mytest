@@ -26,11 +26,16 @@ int _atoi(char *s)
         {
             convert = s[i] - '0';
             nb = nb * 10 + convert;
+            if (s[i - 1] == '-')
+                nb = -nb;
+            if (s[i + 1] < '0' || s[i + 1] > '9')
+                break;
         }
     }
     return nb;
 
 }
+
 int main(void)
 {
     int nb;
